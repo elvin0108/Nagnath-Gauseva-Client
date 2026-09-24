@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -130,6 +130,7 @@ const DonatePage = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
+  const donateFormRef = useRef(null);
 
   const activeCampaign = selectedCampaign
     ? campaigns.find((c) => c.id === selectedCampaign)
@@ -342,9 +343,9 @@ const DonatePage = () => {
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-xl shadow-sm border-b border-gold-200/50 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 md:h-24">
+          <div className="flex items-center justify-between h-16 md:h-24">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0">
+              <div className="w-10 h-10 md:w-16 md:h-16 flex-shrink-0">
                 <img
                   src="/images/logo (2).png"
                   alt="Shree Nagnath Gauseva Trust Logo"
@@ -381,7 +382,7 @@ const DonatePage = () => {
       </header>
 
       {/* Hero Banner */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
+      <section className="relative py-12 md:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/IMG-20260920-WA0032.jpg"
@@ -403,7 +404,7 @@ const DonatePage = () => {
               </span>
               <FaHeart className="text-gold-400 text-sm" />
             </div>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight mb-3">
               Your Donation Saves{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-saffron-400">
                 Lives
@@ -431,12 +432,12 @@ const DonatePage = () => {
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-forest-900 mb-2">
               Choose a Cause
             </h2>
-            <p className="font-body text-gray-600">
-              Select where you want your donation to make the most impact
+            <p className="font-body text-sm text-gray-500 mt-1">
+              Step 1: Select a cause below, then fill in your details to donate
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {campaigns.map((campaign, index) => {
               const Icon = campaign.icon;
               const isSelected = selectedCampaign === campaign.id;
@@ -449,9 +450,15 @@ const DonatePage = () => {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -4 }}
                   onClick={() => {
-                    setSelectedCampaign(isSelected ? null : campaign.id);
+                    const newCampaign = isSelected ? null : campaign.id;
+                    setSelectedCampaign(newCampaign);
                     setSelectedAmount(null);
                     setCustomAmount('');
+                    if (newCampaign && donateFormRef.current) {
+                      setTimeout(() => {
+                        donateFormRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 100);
+                    }
                   }}
                   className={`relative text-left rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border-2 ${
                     isSelected
@@ -460,7 +467,7 @@ const DonatePage = () => {
                   }`}
                 >
                   {/* Image */}
-                  <div className="relative h-40 overflow-hidden">
+                  <div className="relative h-28 sm:h-40 overflow-hidden">
                     <img
                       src={campaign.image}
                       alt={campaign.title}
@@ -482,14 +489,14 @@ const DonatePage = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-4 bg-white">
-                    <h3 className="font-heading text-lg font-bold text-forest-900 mb-0.5">
+                  <div className="p-3 sm:p-4 bg-white">
+                    <h3 className="font-heading text-sm sm:text-lg font-bold text-forest-900 mb-0.5">
                       {campaign.title}
                     </h3>
                     <p className="font-gujarati text-xs text-saffron-600 mb-2">
                       {campaign.titleGuj}
                     </p>
-                    <p className="font-body text-sm text-gray-600 leading-relaxed line-clamp-2">
+                    <p className="font-body text-sm text-gray-600 leading-relaxed line-clamp-1 sm:line-clamp-2">
                       {campaign.description}
                     </p>
                   </div>
@@ -501,12 +508,15 @@ const DonatePage = () => {
       </section>
 
       {/* Donation Form Section */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white" ref={donateFormRef}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Left: Amount Selection + Form (3 cols) */}
             <div className="lg:col-span-3">
-              <div className="bg-cream-50 rounded-2xl p-6 md:p-8 border border-gold-200/50">
+              <div className="bg-cream-50 rounded-2xl p-4 sm:p-6 md:p-8 border border-gold-200/50">
+                {/* Step 2 label */}
+                <p className="font-body text-xs text-saffron-600 font-semibold uppercase tracking-wider mb-2">Step 2: Choose Amount & Donate</p>
+
                 {/* Campaign-specific heading */}
                 {activeCampaign ? (
                   <div className={`flex items-center gap-3 mb-6 p-4 rounded-xl border ${activeCampaign.colorLight}`}>
@@ -559,7 +569,7 @@ const DonatePage = () => {
                         <button
                           key={option.amount}
                           onClick={() => handleAmountSelect(option.amount)}
-                          className={`relative p-3.5 rounded-xl border-2 transition-all duration-300 text-left ${
+                          className={`relative p-2.5 sm:p-3.5 rounded-xl border-2 transition-all duration-300 text-left ${
                             isSelected
                               ? 'border-saffron-500 bg-saffron-50 shadow-lg shadow-saffron-500/15'
                               : 'border-gray-200 bg-white hover:border-saffron-300 hover:bg-saffron-50/50'
@@ -715,7 +725,7 @@ const DonatePage = () => {
             {/* Right: Bank Transfer + QR (2 cols) */}
             <div className="lg:col-span-2 space-y-5">
               {/* Bank Transfer */}
-              <div className="bg-charcoal-900 rounded-2xl p-6 shadow-2xl">
+              <div className="bg-charcoal-900 rounded-2xl p-4 sm:p-6 shadow-2xl">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-gold-500/20 rounded-xl flex items-center justify-center">
                     <FaUniversity className="w-5 h-5 text-gold-400" />
@@ -775,7 +785,7 @@ const DonatePage = () => {
               </div>
 
               {/* QR Code */}
-              <div className="bg-white rounded-2xl p-6 shadow-md border border-gold-200/50 text-center">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-md border border-gold-200/50 text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <FaQrcode className="w-5 h-5 text-gold-600" />
                   <h3 className="font-heading text-lg font-bold text-forest-900">
@@ -821,10 +831,10 @@ const DonatePage = () => {
           {/* Emergency + Contact - Full Width Below Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
             {/* Emergency Rescue CTA */}
-            <div className="bg-gradient-to-br from-saffron-500 to-saffron-600 rounded-2xl p-6 md:p-8 text-white flex flex-col sm:flex-row items-center gap-5">
+            <div className="bg-gradient-to-br from-saffron-500 to-saffron-600 rounded-2xl p-5 md:p-8 text-white flex flex-col sm:flex-row items-center gap-5">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center">
-                  <FaExclamationTriangle className="w-8 h-8 animate-pulse" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/20 flex items-center justify-center">
+                  <FaExclamationTriangle className="w-6 h-6 sm:w-8 sm:h-8 animate-pulse" />
                 </div>
               </div>
               <div className="text-center sm:text-left flex-1">
@@ -845,10 +855,10 @@ const DonatePage = () => {
             </div>
 
             {/* Contact / WhatsApp */}
-            <div className="bg-forest-700 rounded-2xl p-6 md:p-8 text-white flex flex-col sm:flex-row items-center gap-5">
+            <div className="bg-forest-700 rounded-2xl p-5 md:p-8 text-white flex flex-col sm:flex-row items-center gap-5">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center">
-                  <FaWhatsapp className="w-8 h-8" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/20 flex items-center justify-center">
+                  <FaWhatsapp className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
               </div>
               <div className="text-center sm:text-left flex-1">
@@ -892,7 +902,7 @@ const DonatePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-charcoal-950 text-white py-8">
+      <footer className="bg-charcoal-950 text-white py-6 md:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">

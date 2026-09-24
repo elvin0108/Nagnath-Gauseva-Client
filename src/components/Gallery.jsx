@@ -93,7 +93,7 @@ const Gallery = () => {
   }, [lightboxOpen, handleKeyDown]);
 
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-white">
+    <section id="gallery" className="py-14 md:py-28 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
@@ -132,7 +132,7 @@ const Gallery = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveFilter(cat.id)}
-                className={`px-6 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-300 ${
+                className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-300 ${
                   isActive
                     ? 'bg-gradient-to-r from-saffron-500 to-gold-500 text-white shadow-lg shadow-saffron-500/30'
                     : 'bg-gray-100 text-gray-600 hover:bg-saffron-100 hover:text-saffron-700'
@@ -147,7 +147,7 @@ const Gallery = () => {
         {/* Gallery Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => (

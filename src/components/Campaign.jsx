@@ -51,7 +51,7 @@ const Campaign = () => {
     <section
       id="campaign"
       ref={sectionRef}
-      className="relative py-20 md:py-28 overflow-hidden"
+      className="relative py-14 md:py-28 overflow-hidden"
     >
       {/* Background: Photo with very dark overlay */}
       <div className="absolute inset-0">
@@ -84,7 +84,7 @@ const Campaign = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="space-y-12"
+          className="space-y-8 md:space-y-12"
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center">
@@ -120,7 +120,7 @@ const Campaign = () => {
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6"
           >
-            <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-6 text-center hover:bg-white/8 transition-colors duration-300">
+            <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-4 md:p-6 text-center hover:bg-white/8 transition-colors duration-300">
               <GiWheat className="text-gold-400 text-3xl mx-auto mb-3" />
               <p className="font-heading font-bold text-2xl md:text-3xl text-white">
                 {"Rs. 15,000"}
@@ -129,7 +129,7 @@ const Campaign = () => {
                 Daily Feeding Cost
               </p>
             </div>
-            <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-6 text-center hover:bg-white/8 transition-colors duration-300">
+            <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-4 md:p-6 text-center hover:bg-white/8 transition-colors duration-300">
               <GiCow className="text-gold-400 text-3xl mx-auto mb-3" />
               <p className="font-heading font-bold text-2xl md:text-3xl text-white">
                 {"500+"}
@@ -138,7 +138,7 @@ const Campaign = () => {
                 Cows Under Our Care
               </p>
             </div>
-            <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-6 text-center hover:bg-white/8 transition-colors duration-300">
+            <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-4 md:p-6 text-center hover:bg-white/8 transition-colors duration-300">
               <FaMedkit className="text-saffron-400 text-3xl mx-auto mb-3" />
               <p className="font-heading font-bold text-2xl md:text-3xl text-saffron-300">
                 {"Rs. 4,50,000"}
@@ -166,7 +166,7 @@ const Campaign = () => {
                   }}
                   className={`relative group rounded-xl p-4 md:p-5 text-center transition-all duration-300 border-2 ${
                     selectedAmount === option.amount
-                      ? 'border-gold-400 bg-gold-500/15 shadow-lg shadow-gold-500/20 scale-105'
+                      ? 'border-gold-400 bg-gold-500/15 shadow-lg shadow-gold-500/20 scale-[1.02]'
                       : 'border-white/10 bg-white/5 hover:border-gold-500/40 hover:bg-white/8'
                   }`}
                 >

@@ -116,7 +116,7 @@ const Impact = () => {
   return (
     <section
       id="impact"
-      className="relative py-20 md:py-28 overflow-hidden"
+      className="relative py-14 md:py-28 overflow-hidden"
     >
       {/* Full-bleed background image */}
       <div className="absolute inset-0">

@@ -90,7 +90,7 @@ const Services = () => {
     <section
       id="services"
       ref={sectionRef}
-      className="relative py-20 md:py-28 bg-gradient-to-b from-cream-100 via-white to-cream-50 overflow-hidden"
+      className="relative py-14 md:py-28 bg-gradient-to-b from-cream-100 via-white to-cream-50 overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 right-0 w-64 h-64 rounded-full bg-saffron-100/50 blur-3xl pointer-events-none" />
@@ -140,7 +140,7 @@ const Services = () => {
               key={service.key}
               variants={cardVariants}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 cursor-pointer h-[340px] md:h-[360px]"
+              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 cursor-pointer h-[300px] sm:h-[340px] md:h-[360px]"
             >
               {/* Photo Background */}
               <div className="absolute inset-0">

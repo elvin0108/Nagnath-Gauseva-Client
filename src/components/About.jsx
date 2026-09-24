@@ -30,7 +30,7 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-20 md:py-28 bg-cream-100 overflow-hidden"
+      className="relative py-14 md:py-28 bg-cream-100 overflow-hidden"
     >
       {/* Decorative Patterns */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -114,7 +114,7 @@ const About = () => {
             {/* Smaller Gaushala Image - overlapping */}
             <motion.div
               variants={itemVariants}
-              className="relative z-20 -mt-16 ml-auto mr-4 md:mr-0 md:-mt-20 md:ml-auto w-[55%] md:w-[50%]"
+              className="relative z-20 -mt-12 ml-auto mr-2 sm:mr-4 md:mr-0 md:-mt-20 md:ml-auto w-[50%] md:w-[50%]"
             >
               <div className="rounded-xl overflow-hidden shadow-xl border-3 border-white">
                 <img
@@ -159,7 +159,7 @@ const About = () => {
                 </span>
                 Our Inspiration
               </h3>
-              <p className="font-body text-forest-700 leading-relaxed pl-[52px]">
+              <p className="font-body text-forest-700 leading-relaxed pl-0 sm:pl-[52px]">
                 Shree Nagnath Gauseva Trust was established following the divine
                 teachings of revered Shree Nagnath Bapu, to serve and protect Gau Mata
                 (mother cow). Located in the peaceful village of Ishvariya, our trust
@@ -178,7 +178,7 @@ const About = () => {
                 </span>
                 Our Mission
               </h3>
-              <p className="font-body text-forest-700 leading-relaxed pl-[52px]">
+              <p className="font-body text-forest-700 leading-relaxed pl-0 sm:pl-[52px]">
                 To rescue abandoned, injured and sick cows from the streets and
                 provide them with safe shelter, nutritious food and proper medical
                 care. Our modern gaushala houses 500+ cows with the best
@@ -195,7 +195,7 @@ const About = () => {
                 </span>
                 Our Vision
               </h3>
-              <p className="font-body text-forest-700 leading-relaxed pl-[52px]">
+              <p className="font-body text-forest-700 leading-relaxed pl-0 sm:pl-[52px]">
                 A world where no cow is left abandoned or suffering on the streets.
                 Every Gau Mata deserves love, care and dignity. We envision a
                 future where communities come together to protect and serve these

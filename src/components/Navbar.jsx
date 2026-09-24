@@ -73,7 +73,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-16 md:h-24">
 
           {/* Left: Logo + Trust Name */}
           <a
@@ -82,7 +82,7 @@ const Navbar = () => {
             className="flex items-center gap-3 flex-shrink-0 group"
           >
             {/* Logo Image */}
-            <div className="relative w-14 h-14 md:w-16 md:h-16 flex-shrink-0">
+            <div className="relative w-10 h-10 md:w-16 md:h-16 flex-shrink-0">
               <img
                 src="/images/logo (2).png"
                 alt="Shree Nagnath Gauseva Trust Logo"
@@ -144,7 +144,7 @@ const Navbar = () => {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-charcoal-700 hover:bg-gold-50 hover:text-gold-700 transition-colors duration-200"
+              className="lg:hidden p-2.5 rounded-lg text-charcoal-700 hover:bg-gold-50 hover:text-gold-700 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}

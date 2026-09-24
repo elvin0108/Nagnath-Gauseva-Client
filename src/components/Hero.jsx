@@ -52,7 +52,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-charcoal-950/90 to-transparent" />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 flex-1 flex flex-col justify-center items-center text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-28 sm:pb-20 flex-1 flex flex-col justify-center items-center text-center">
 
         {/* Decorative top flourish */}
         <motion.div
@@ -67,7 +67,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-          className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] tracking-tight"
+          className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] tracking-tight"
           style={{ textShadow: '0 4px 30px rgba(0,0,0,0.5)' }}
         >
           Shree Nagnath
@@ -102,7 +102,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 1.1 }}
-          className="mt-8 mx-auto max-w-md"
+          className="mt-6 mx-4 sm:mx-auto max-w-md"
         >
           <div className="relative rounded-2xl overflow-hidden">
             {/* Glowing border effect */}
@@ -128,7 +128,7 @@ const Hero = () => {
           {/* Donate Now - Solid Gold */}
           <Link
             to="/donate"
-            className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-heading font-bold text-lg shadow-2xl shadow-gold-600/30 hover:shadow-gold-500/50 hover:from-gold-400 hover:to-gold-500 hover:scale-105 active:scale-[0.98] transition-all duration-300"
+            className="group inline-flex items-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-heading font-bold text-lg shadow-2xl shadow-gold-600/30 hover:shadow-gold-500/50 hover:from-gold-400 hover:to-gold-500 hover:scale-105 active:scale-[0.98] transition-all duration-300"
           >
             <FaHeart className="text-base group-hover:animate-pulse" />
             Donate Now
@@ -138,7 +138,7 @@ const Hero = () => {
           <a
             href="#about"
             onClick={(e) => handleSmoothScroll(e, '#about')}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-heading font-semibold text-lg hover:bg-white/10 hover:border-white/70 hover:scale-105 active:scale-[0.98] transition-all duration-300 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border-2 border-white/40 text-white font-heading font-semibold text-lg hover:bg-white/10 hover:border-white/70 hover:scale-105 active:scale-[0.98] transition-all duration-300 backdrop-blur-sm"
           >
             Our Mission
           </a>
@@ -172,12 +172,12 @@ const Hero = () => {
 
       {/* Bottom Stats Strip */}
       <div className="relative z-10 bg-charcoal-900/60 backdrop-blur-xl border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0"
           >
             {stats.map((stat, index) => (
               <React.Fragment key={stat.label}>

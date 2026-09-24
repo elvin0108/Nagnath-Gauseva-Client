@@ -242,7 +242,7 @@ const DonateSection = () => {
   return (
     <section
       id="donate"
-      className="py-20 md:py-28 bg-cream-100 relative overflow-hidden"
+      className="py-14 md:py-28 bg-cream-100 relative overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-saffron-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
