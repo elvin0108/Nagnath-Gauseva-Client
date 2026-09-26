@@ -111,9 +111,9 @@ const About = () => {
             {/* Smaller Gaushala Image - overlapping */}
             <motion.div
               variants={itemVariants}
-              className="relative z-20 -mt-12 ml-auto mr-2 sm:mr-4 md:mr-0 md:-mt-20 md:ml-auto w-[50%] md:w-[50%]"
+              className="relative z-20 -mt-8 sm:-mt-12 ml-auto mr-0 md:-mt-20 md:ml-auto w-[45%] md:w-[50%]"
             >
-              <div className="rounded-xl overflow-hidden shadow-xl border-3 border-white">
+              <div className="relative rounded-xl overflow-hidden shadow-xl border-3 border-white">
                 <img
                   src="/images/IMG-20260920-WA0040.jpg"
                   alt="Our Gaushala - Large herd of rescued cows"
@@ -130,7 +130,7 @@ const About = () => {
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
-              className="absolute -bottom-4 left-4 md:left-0 z-30 bg-white rounded-xl shadow-lg px-5 py-3 flex items-center gap-3 border border-gold-200"
+              className="absolute -bottom-4 left-4 md:left-0 z-30 bg-white rounded-xl shadow-lg px-4 sm:px-5 py-3 flex items-center gap-3 border border-gold-200 max-w-[55%] md:max-w-none"
             >
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold-400 to-saffron-500 flex items-center justify-center text-white text-xl shadow-md">
                 <FaHandsHelping />
