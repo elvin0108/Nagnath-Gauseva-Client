@@ -178,7 +178,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Left: Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

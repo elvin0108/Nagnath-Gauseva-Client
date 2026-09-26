@@ -52,7 +52,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-charcoal-950/90 to-transparent" />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-28 sm:pb-20 flex-1 flex flex-col justify-center items-center text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-28 sm:pb-20 flex-1 flex flex-col justify-center items-center text-center">
 
         {/* Decorative top flourish */}
         <motion.div

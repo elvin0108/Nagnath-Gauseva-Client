@@ -21,7 +21,7 @@ const WhatsAppButton = () => {
         stiffness: 200,
         delay: 2,
       }}
-      className="fixed bottom-6 left-6 z-40"
+      className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40"
     >
       {/* Tooltip */}
       {showTooltip && (
@@ -46,7 +46,7 @@ const WhatsAppButton = () => {
         onFocus={() => setShowTooltip(true)}
         onBlur={() => setShowTooltip(false)}
         aria-label="Chat with us on WhatsApp"
-        className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] text-white shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:scale-110 transition-all duration-300"
+        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] text-white shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:scale-110 transition-all duration-300"
       >
         {/* Pulse ring */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />

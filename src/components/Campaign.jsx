@@ -118,7 +118,7 @@ const Campaign = () => {
           {/* Stats Row */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6"
           >
             <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-4 md:p-6 text-center hover:bg-white/8 transition-colors duration-300">
               <GiWheat className="text-gold-400 text-3xl mx-auto mb-3" />
@@ -156,7 +156,7 @@ const Campaign = () => {
               Choose Your Donation
             </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4">
               {donationOptions.map((option) => (
                 <button
                   key={option.amount}
@@ -216,7 +216,7 @@ const Campaign = () => {
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <Link
               to="/donate"
-              className="inline-flex items-center gap-3 px-12 py-4 rounded-full bg-gradient-to-r from-gold-500 via-saffron-500 to-gold-500 text-white font-heading font-bold text-lg shadow-2xl shadow-saffron-500/25 hover:shadow-saffron-500/40 hover:scale-105 active:scale-100 transition-all duration-300 relative overflow-hidden group"
+              className="inline-flex items-center gap-3 px-8 sm:px-12 py-4 rounded-full bg-gradient-to-r from-gold-500 via-saffron-500 to-gold-500 text-white font-heading font-bold text-lg shadow-2xl shadow-saffron-500/25 hover:shadow-saffron-500/40 hover:scale-105 active:scale-100 transition-all duration-300 relative overflow-hidden group"
             >
               {/* Shimmer on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

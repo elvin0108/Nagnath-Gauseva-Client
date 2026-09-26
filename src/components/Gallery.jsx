@@ -147,7 +147,7 @@ const Gallery = () => {
         {/* Gallery Grid */}
         <motion.div
           layout
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => (

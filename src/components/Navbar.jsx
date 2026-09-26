@@ -62,98 +62,100 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-b border-gold-200/50'
-          : 'bg-white/70 backdrop-blur-md'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-24">
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-b border-gold-200/50'
+            : 'bg-white/70 backdrop-blur-md'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-24">
 
-          {/* Left: Logo + Trust Name */}
-          <a
-            href="#home"
-            onClick={(e) => handleSmoothScroll(e, '#home')}
-            className="flex items-center gap-3 flex-shrink-0 group"
-          >
-            {/* Logo Image */}
-            <div className="relative w-10 h-10 md:w-16 md:h-16 flex-shrink-0">
-              <img
-                src="/images/logo (2).png"
-                alt="Shree Nagnath Gauseva Trust Logo"
-                className="w-full h-full object-contain"
-              />
+            {/* Left: Logo + Trust Name */}
+            <a
+              href="#home"
+              onClick={(e) => handleSmoothScroll(e, '#home')}
+              className="flex items-center gap-2 sm:gap-3 flex-shrink-0 group min-w-0"
+            >
+              {/* Logo Image */}
+              <div className="relative w-10 h-10 md:w-16 md:h-16 flex-shrink-0">
+                <img
+                  src="/images/logo (2).png"
+                  alt="Shree Nagnath Gauseva Trust Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Trust Name */}
+              <div className="hidden sm:block min-w-0">
+                <h1 className="font-heading text-sm md:text-base font-bold text-charcoal-800 leading-tight tracking-wide group-hover:text-gold-700 transition-colors duration-300 truncate">
+                  Shree Nagnath Gauseva Trust
+                </h1>
+                <p className="font-gujarati text-[11px] md:text-xs text-gold-600 leading-tight">
+                  ઈશ્વરીયા
+                </p>
+              </div>
+            </a>
+
+            {/* Center: Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center gap-0.5">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className={`relative px-4 py-2 text-sm font-body font-medium rounded-lg transition-all duration-300 ${
+                      isActive
+                        ? 'text-gold-700'
+                        : 'text-charcoal-700 hover:text-gold-600'
+                    }`}
+                  >
+                    {link.label}
+                    {/* Active indicator */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="navbar-active"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full"
+                        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                      />
+                    )}
+                  </a>
+                );
+              })}
             </div>
 
-            {/* Trust Name */}
-            <div className="hidden sm:block">
-              <h1 className="font-heading text-sm md:text-base font-bold text-charcoal-800 leading-tight tracking-wide group-hover:text-gold-700 transition-colors duration-300">
-                Shree Nagnath Gauseva Trust
-              </h1>
-              <p className="font-gujarati text-[11px] md:text-xs text-gold-600 leading-tight">
-                ઈશ્વરીયા
-              </p>
+            {/* Right: Donate CTA + Mobile Hamburger */}
+            <div className="flex items-center gap-3 flex-shrink-0">
+              {/* Donate Now CTA - Desktop */}
+              <Link
+                to="/donate"
+                className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-heading font-semibold text-sm shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 hover:scale-105 hover:from-gold-600 hover:to-gold-700 transition-all duration-300"
+              >
+                <FaHeart className="text-xs" />
+                Donate Now
+              </Link>
+
+              {/* Mobile Hamburger */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden p-2.5 rounded-lg text-charcoal-700 hover:bg-gold-50 hover:text-gold-700 transition-colors duration-200"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
+              </button>
             </div>
-          </a>
-
-          {/* Center: Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-0.5">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.href;
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className={`relative px-4 py-2 text-sm font-body font-medium rounded-lg transition-all duration-300 ${
-                    isActive
-                      ? 'text-gold-700'
-                      : 'text-charcoal-700 hover:text-gold-600'
-                  }`}
-                >
-                  {link.label}
-                  {/* Active indicator */}
-                  {isActive && (
-                    <motion.span
-                      layoutId="navbar-active"
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full"
-                      transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                    />
-                  )}
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Right: Donate CTA + Mobile Hamburger */}
-          <div className="flex items-center gap-3">
-            {/* Donate Now CTA - Desktop */}
-            <Link
-              to="/donate"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-heading font-semibold text-sm shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 hover:scale-105 hover:from-gold-600 hover:to-gold-700 transition-all duration-300"
-            >
-              <FaHeart className="text-xs" />
-              Donate Now
-            </Link>
-
-            {/* Mobile Hamburger */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2.5 rounded-lg text-charcoal-700 hover:bg-gold-50 hover:text-gold-700 transition-colors duration-200"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
-            </button>
           </div>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer - rendered outside motion.nav to avoid transform containment breaking fixed positioning */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -163,7 +165,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="fixed inset-0 bg-charcoal-900/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[60] bg-charcoal-900/40 backdrop-blur-sm lg:hidden"
               onClick={() => setIsOpen(false)}
             />
 
@@ -173,11 +175,11 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 220 }}
-              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl lg:hidden z-50 flex flex-col"
+              className="fixed inset-y-0 right-0 w-[75vw] max-w-[300px] bg-white shadow-2xl lg:hidden z-[70] flex flex-col overflow-hidden"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between p-5 border-b border-gold-100">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-gold-100">
+                <div className="flex items-center gap-3 min-w-0">
                   <div className="w-9 h-9 flex-shrink-0">
                     <img
                       src="/images/logo (2).png"
@@ -185,8 +187,8 @@ const Navbar = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div>
-                    <h2 className="font-heading font-bold text-sm text-charcoal-800">
+                  <div className="min-w-0">
+                    <h2 className="font-heading font-bold text-sm text-charcoal-800 truncate">
                       Shree Nagnath
                     </h2>
                     <p className="font-gujarati text-[10px] text-gold-600">
@@ -196,7 +198,7 @@ const Navbar = () => {
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-lg text-charcoal-700 hover:bg-gold-50 hover:text-gold-700 transition-colors"
+                  className="p-2 rounded-lg text-charcoal-700 hover:bg-gold-50 hover:text-gold-700 transition-colors flex-shrink-0"
                   aria-label="Close menu"
                 >
                   <HiX className="w-5 h-5" />
@@ -204,7 +206,7 @@ const Navbar = () => {
               </div>
 
               {/* Drawer Navigation */}
-              <div className="flex-1 py-4 px-3 overflow-y-auto">
+              <div className="flex-1 py-3 px-4 overflow-y-auto">
                 {navLinks.map((link, index) => {
                   const isActive = activeSection === link.href;
                   return (
@@ -215,7 +217,7 @@ const Navbar = () => {
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.05 + index * 0.05, duration: 0.3 }}
-                      className={`flex items-center px-4 py-3.5 mb-1 text-base font-body font-medium rounded-xl transition-all duration-200 ${
+                      className={`flex items-center px-4 py-3 mb-1 text-base font-body font-medium rounded-xl transition-all duration-200 ${
                         isActive
                           ? 'text-gold-700 bg-gold-50 border-l-4 border-gold-500'
                           : 'text-charcoal-700 hover:text-gold-700 hover:bg-gold-50/60'
@@ -228,7 +230,7 @@ const Navbar = () => {
               </div>
 
               {/* Drawer Footer - Donate CTA */}
-              <div className="p-4 border-t border-gold-100 bg-cream-50">
+              <div className="mx-4 mb-4 mt-2">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -237,7 +239,7 @@ const Navbar = () => {
                   <Link
                     to="/donate"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-heading font-semibold text-base shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 active:scale-[0.98] transition-all duration-300"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-white font-heading font-semibold text-base shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 active:scale-[0.98] transition-all duration-300"
                   >
                     <FaHeart className="text-sm" />
                     Donate Now
@@ -251,7 +253,7 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 };
 

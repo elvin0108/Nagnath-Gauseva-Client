@@ -32,7 +32,7 @@ const FloatingDonate = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 80 }}
           transition={{ type: 'spring', damping: 20, stiffness: 200 }}
-          className="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 group"
+          className="fixed right-3 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 group"
         >
           {/* Pulsing glow ring */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-b from-gold-400 to-saffron-500 animate-ping opacity-20" />

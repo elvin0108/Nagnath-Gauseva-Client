@@ -326,7 +326,7 @@ const DonateSection = () => {
         </AnimatePresence>
 
         {/* Two Column Layout */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* LEFT COLUMN - Bank Transfer Details */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -441,7 +441,7 @@ const DonateSection = () => {
               </h3>
 
               {/* Amount Selection */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 mb-6">
                 {presetAmounts.map((preset) => {
                   const Icon = preset.icon;
                   const isSelected = selectedAmount === preset.amount && !customAmount;
@@ -615,7 +615,7 @@ const DonateSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 mb-6"
+          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8 mb-6"
         >
           {trustIndicators.map((indicator, index) => {
             const Icon = indicator.icon;

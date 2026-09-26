@@ -81,7 +81,7 @@ const Footer = () => {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
               {bankDetailsList.map((detail, index) => (
                 <div
                   key={index}
@@ -111,7 +111,7 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8 md:gap-10">
           {/* Column 1: Organization Info */}
           <div>
             <div className="mb-6">
@@ -236,13 +236,14 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-charcoal-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             {/* Copyright */}
-            <div className="font-body text-sm text-gray-500 text-center md:text-left">
+            <div className="font-body text-xs sm:text-sm text-gray-500 text-center md:text-left">
               <span>
-                &copy; {new Date().getFullYear()} Shree Nagnath Gauseva Trust. All rights reserved.
+                &copy; {new Date().getFullYear()} Shree Nagnath Gauseva Trust.
               </span>
-              <span className="mx-2">|</span>
+              <span className="hidden sm:inline mx-2">|</span>
+              <br className="sm:hidden" />
               <span className="inline-flex items-center gap-1">
                 Made with
                 <FaHeart className="w-3 h-3 text-red-500 inline" />
@@ -251,16 +252,16 @@ const Footer = () => {
             </div>
 
             {/* Legal Links */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6">
               <a
                 href="#"
-                className="font-body text-sm text-gray-500 hover:text-gold-400 transition-colors"
+                className="font-body text-xs sm:text-sm text-gray-500 hover:text-gold-400 transition-colors"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="font-body text-sm text-gray-500 hover:text-gold-400 transition-colors"
+                className="font-body text-xs sm:text-sm text-gray-500 hover:text-gold-400 transition-colors"
               >
                 Terms of Use
               </a>
@@ -279,7 +280,7 @@ const Footer = () => {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-gold-500 to-saffron-500 hover:from-gold-600 hover:to-saffron-600 text-white rounded-full shadow-lg shadow-gold-500/30 flex items-center justify-center z-40 transition-colors"
+            className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-gold-500 to-saffron-500 hover:from-gold-600 hover:to-saffron-600 text-white rounded-full shadow-lg shadow-gold-500/30 flex items-center justify-center z-40 transition-colors"
             aria-label="Scroll to top"
           >
             <FaArrowUp className="w-5 h-5" />

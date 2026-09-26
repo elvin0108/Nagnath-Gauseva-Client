@@ -84,7 +84,7 @@ const About = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
         >
           {/* Image Composition (Left) */}
-          <motion.div variants={itemVariants} className="relative">
+          <motion.div variants={itemVariants} className="relative mb-12 lg:mb-0">
             {/* Main Shree Nagnath Bapu Image */}
             <div className="relative z-10">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gold-400/60">

@@ -437,7 +437,7 @@ const DonatePage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {campaigns.map((campaign, index) => {
               const Icon = campaign.icon;
               const isSelected = selectedCampaign === campaign.id;
@@ -510,7 +510,7 @@ const DonatePage = () => {
       {/* Donation Form Section */}
       <section className="py-8 md:py-16 bg-white" ref={donateFormRef}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8">
             {/* Left: Amount Selection + Form (3 cols) */}
             <div className="lg:col-span-3">
               <div className="bg-cream-50 rounded-2xl p-4 sm:p-6 md:p-8 border border-gold-200/50">
@@ -555,7 +555,7 @@ const DonatePage = () => {
                   <p className="font-body text-sm font-semibold text-gray-700 mb-3">
                     Select Donation Amount
                   </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
                     {(activeCampaign ? activeCampaign.amounts : [
                       { amount: 51, label: 'A heartfelt blessing', labelGuj: 'હૃદયપૂર્વક આશીર્વાદ' },
                       { amount: 101, label: 'Feed a cow', labelGuj: 'એક ગાય ને ભોજન' },
@@ -829,7 +829,7 @@ const DonatePage = () => {
           </div>
 
           {/* Emergency + Contact - Full Width Below Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-6 sm:mt-8">
             {/* Emergency Rescue CTA */}
             <div className="bg-gradient-to-br from-saffron-500 to-saffron-600 rounded-2xl p-5 md:p-8 text-white flex flex-col sm:flex-row items-center gap-5">
               <div className="flex-shrink-0">
@@ -882,9 +882,9 @@ const DonatePage = () => {
           </div>
 
           {/* Payment Methods */}
-          <div className="mt-8 text-center">
+          <div className="mt-6 sm:mt-8 text-center">
             <p className="font-body text-sm text-gray-500 mb-3">Accepted Payment Methods</p>
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               {[
                 { icon: FaMobileAlt, label: 'UPI' },
                 { icon: FaCreditCard, label: 'Cards' },
@@ -916,9 +916,9 @@ const DonatePage = () => {
                 </p>
               </div>
             </div>
-            <div className="font-body text-sm text-gray-500 flex items-center gap-1">
+            <div className="font-body text-xs sm:text-sm text-gray-500 flex items-center gap-1 text-center">
               &copy; {new Date().getFullYear()} All rights reserved. Made with
-              <FaHeart className="w-3 h-3 text-red-500 inline" />
+              <FaHeart className="w-3 h-3 text-red-500 inline flex-shrink-0" />
               for Gau Seva
             </div>
             <Link

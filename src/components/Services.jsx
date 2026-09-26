@@ -140,7 +140,7 @@ const Services = () => {
               key={service.key}
               variants={cardVariants}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 cursor-pointer h-[300px] sm:h-[340px] md:h-[360px]"
+              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 cursor-pointer min-h-[280px] sm:min-h-[320px] md:min-h-[360px]"
             >
               {/* Photo Background */}
               <div className="absolute inset-0">
