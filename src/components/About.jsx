@@ -86,7 +86,7 @@ const About = () => {
           {/* Image Composition (Left) */}
           <motion.div variants={itemVariants} className="relative mb-12 lg:mb-0">
             {/* Main Shree Nagnath Bapu Image */}
-            <div className="relative z-10">
+            <div className="relative z-10 overflow-hidden">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gold-400/60">
                 {/* Golden inner border */}
                 <div className="absolute inset-0 border-2 border-gold-300/40 rounded-xl z-10 pointer-events-none m-1" />
@@ -106,9 +106,6 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              {/* Decorative golden frame shadow */}
-              <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-gold-400/30 rounded-2xl -z-10" />
-              <div className="absolute -bottom-6 -right-6 w-full h-full border border-gold-300/15 rounded-2xl -z-20" />
             </div>
 
             {/* Smaller Gaushala Image - overlapping */}

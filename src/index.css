@@ -2,14 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
   background-color: #FFFDF5;
+}
+
+#root {
+  overflow-x: hidden;
 }
 
 ::selection {

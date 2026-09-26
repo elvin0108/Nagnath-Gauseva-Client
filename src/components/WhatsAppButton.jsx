@@ -46,10 +46,10 @@ const WhatsAppButton = () => {
         onFocus={() => setShowTooltip(true)}
         onBlur={() => setShowTooltip(false)}
         aria-label="Chat with us on WhatsApp"
-        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] text-white shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:scale-110 transition-all duration-300"
+        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] text-white shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:scale-110 transition-all duration-300 overflow-hidden"
       >
         {/* Pulse ring */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-30" />
         <FaWhatsapp className="relative text-2xl md:text-3xl" />
       </a>
     </motion.div>

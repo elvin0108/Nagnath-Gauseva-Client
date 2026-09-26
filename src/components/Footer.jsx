@@ -69,7 +69,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-charcoal-950 text-white relative">
+    <footer className="bg-charcoal-950 text-white relative overflow-hidden">
       {/* Bank Details Banner */}
       <div className="bg-charcoal-900 border-b border-charcoal-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">

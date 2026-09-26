@@ -34,13 +34,10 @@ const FloatingDonate = () => {
           transition={{ type: 'spring', damping: 20, stiffness: 200 }}
           className="fixed right-3 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 group"
         >
-          {/* Pulsing glow ring */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-gold-400 to-saffron-500 animate-ping opacity-20" />
-
           {/* Button body */}
           <Link
             to="/donate"
-            className="relative flex flex-col items-center gap-1.5 px-3 py-4 md:px-4 md:py-5 rounded-full bg-gradient-to-b from-gold-400 to-saffron-600 text-white shadow-xl shadow-saffron-500/30 hover:shadow-saffron-500/50 hover:scale-110 transition-all duration-300"
+            className="relative flex flex-col items-center gap-1.5 px-3 py-4 md:px-4 md:py-5 rounded-full bg-gradient-to-b from-gold-400 to-saffron-600 text-white shadow-xl shadow-saffron-500/30 hover:shadow-saffron-500/50 hover:scale-110 transition-all duration-300 overflow-hidden"
             aria-label="Donate now"
           >
             <FaHeart className="text-lg md:text-xl animate-pulse" />

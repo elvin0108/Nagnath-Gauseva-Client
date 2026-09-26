@@ -93,7 +93,7 @@ const Gallery = () => {
   }, [lightboxOpen, handleKeyDown]);
 
   return (
-    <section id="gallery" className="py-14 md:py-28 bg-white">
+    <section id="gallery" className="py-14 md:py-28 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
