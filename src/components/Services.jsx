@@ -148,6 +148,7 @@ const Services = () => {
                   src={service.photo}
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
 

@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -300,6 +301,14 @@ const DonatePage = () => {
 
   return (
     <div className="min-h-screen bg-cream-50">
+      <Helmet>
+        <title>Donate for Gau Seva - Shree Nagnath Gauseva Trust | Online Donation for Cow Care</title>
+        <meta name="description" content="Donate online to Shree Nagnath Gauseva Trust. Help feed, shelter and provide medical care to 500+ cows. 80G tax benefit available. Secure payment via UPI, cards, net banking. ગૌ સેવા માટે દાન કરો." />
+        <link rel="canonical" href="https://shreenagnathgauseva.org/donate" />
+        <meta property="og:title" content="Donate for Gau Seva - Shree Nagnath Gauseva Trust" />
+        <meta property="og:description" content="Donate online to help 500+ cows. 80G tax benefit. Secure payment via UPI, cards, net banking." />
+        <meta property="og:url" content="https://shreenagnathgauseva.org/donate" />
+      </Helmet>
       <Toaster
         position="top-center"
         toastOptions={{

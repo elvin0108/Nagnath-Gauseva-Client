@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -19,6 +20,13 @@ import DonatePage from './pages/DonatePage';
 function HomePage() {
   return (
     <>
+      <Helmet>
+        <title>Shree Nagnath Gauseva Trust - Cow Shelter & Gaushala in Ishvariya, Rajkot, Gujarat</title>
+        <meta name="description" content="Shree Nagnath Gauseva Trust (Reg. No: 3891) provides shelter, food, medical care to 500+ abandoned and injured cows at our gaushala in Ishvariya, Jasdan, Rajkot, Gujarat. Donate now for Gau Seva." />
+        <link rel="canonical" href="https://shreenagnathgauseva.org/" />
+        <meta property="og:title" content="Shree Nagnath Gauseva Trust - Cow Shelter & Gaushala | Donate for Gau Seva" />
+        <meta property="og:url" content="https://shreenagnathgauseva.org/" />
+      </Helmet>
       <Navbar />
       <main>
         <Hero />

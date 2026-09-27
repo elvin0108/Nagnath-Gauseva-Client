@@ -124,6 +124,7 @@ const Impact = () => {
           src="/images/IMG-20260920-WA0008.jpg"
           alt="Majestic cows at sunset"
           className="w-full h-full object-cover"
+          loading="lazy"
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/85 via-charcoal-950/80 to-charcoal-950/90" />

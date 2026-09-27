@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /donate
+
+Sitemap: https://shreenagnathgauseva.org/sitemap.xml
+
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

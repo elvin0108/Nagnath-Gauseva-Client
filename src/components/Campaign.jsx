@@ -59,6 +59,7 @@ const Campaign = () => {
           src="/images/IMG-20260920-WA0040.jpg"
           alt="Cows at our gaushala"
           className="w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-charcoal-950/95" />
       </div>

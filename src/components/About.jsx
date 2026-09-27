@@ -94,6 +94,7 @@ const About = () => {
                   src="/images/IMG-20260920-WA0038.jpg"
                   alt="Shree Nagnath Bapu - Our Spiritual Inspiration"
                   className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
                 />
                 {/* Subtle golden gradient overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
@@ -118,6 +119,7 @@ const About = () => {
                   src="/images/IMG-20260920-WA0040.jpg"
                   alt="Our Gaushala - Large herd of rescued cows"
                   className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/50 to-transparent" />
                 <p className="absolute bottom-2 left-0 right-0 text-center font-body text-white text-xs font-medium drop-shadow-lg">
