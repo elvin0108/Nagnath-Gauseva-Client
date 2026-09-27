@@ -240,11 +240,11 @@ const DonatePage = () => {
         `${API_BASE}/donations/create-order`,
         {
           amount,
-          donorName: formData.anonymous ? 'Anonymous' : formData.name,
-          donorEmail: formData.email || '',
-          donorPhone: formData.phone,
-          anonymous: formData.anonymous,
-          campaign: activeCampaign?.title || 'General Donation',
+          name: formData.anonymous ? 'Anonymous' : formData.name,
+          email: formData.email || '',
+          phone: formData.phone,
+          isAnonymous: formData.anonymous,
+          message: activeCampaign?.title || 'General Donation',
         }
       );
 
