@@ -43,8 +43,8 @@ const campaigns = [
     iconColor: 'text-saffron-600',
     amounts: [
       { amount: 51, label: 'A heartfelt blessing', labelGuj: 'હૃદયપૂર્વક આશીર્વાદ' },
-      { amount: 101, label: 'Feed a cow', labelGuj: 'એક ગાય ને ભોજન' },
-      { amount: 501, label: 'Feed 3 cows for a day', labelGuj: '3 ગાયો ને ભોજન' },
+      { amount: 101, label: 'Fodder for a cow', labelGuj: 'એક ગાય નો ઘાસચારો' },
+      { amount: 501, label: 'Fodder for 3 cows', labelGuj: '3 ગાયો નો ઘાસચારો' },
       { amount: 1100, label: 'One week of fodder', labelGuj: 'એક અઠવાડિયા નો ઘાસચારો' },
       { amount: 2100, label: 'Medical care for 1 cow', labelGuj: '1 ગાય ની તબીબી સારવાર' },
       { amount: 5100, label: 'Monthly cow care', labelGuj: 'માસિક ગાય સંભાળ' },
@@ -53,19 +53,19 @@ const campaigns = [
   {
     id: 'daily-feeding',
     icon: GiWheat,
-    title: 'Daily Feeding',
-    titleGuj: 'દૈનિક ભોજન',
-    descGuj: 'ગાયો ને રોજ ખોરાક અને પાણી',
+    title: 'Daily Fodder',
+    titleGuj: 'દૈનિક ઘાસચારો',
+    descGuj: 'ગાયો ને રોજ ઘાસચારો અને પાણી',
     color: 'from-saffron-500 to-gold-500',
     colorLight: 'bg-saffron-50 border-saffron-200',
     iconColor: 'text-saffron-600',
     amounts: [
-      { amount: 51, label: 'Bless a cow with food', labelGuj: 'ગાય ને ખોરાક નો આશીર્વાદ' },
-      { amount: 101, label: 'Feed a cow for a day', labelGuj: 'એક દિવસ નું ભોજન' },
-      { amount: 501, label: 'Feed 3 cows for a day', labelGuj: '3 ગાયો ને એક દિવસ ભોજન' },
-      { amount: 1100, label: 'Weekly feeding', labelGuj: 'સાપ્તાહિક ભોજન' },
-      { amount: 5100, label: 'Monthly feeding', labelGuj: 'માસિક ભોજન' },
-      { amount: 11000, label: 'Feed all cows for a day', labelGuj: 'બધી ગાયો ને એક દિવસ ભોજન' },
+      { amount: 51, label: 'Bless a cow with fodder', labelGuj: 'ગાય ને ઘાસચારો નો આશીર્વાદ' },
+      { amount: 101, label: 'Fodder for a cow for a day', labelGuj: 'એક દિવસ નો ઘાસચારો' },
+      { amount: 501, label: 'Fodder for 3 cows', labelGuj: '3 ગાયો નો એક દિવસ ઘાસચારો' },
+      { amount: 1100, label: 'Weekly fodder', labelGuj: 'સાપ્તાહિક ઘાસચારો' },
+      { amount: 5100, label: 'Monthly fodder', labelGuj: 'માસિક ઘાસચારો' },
+      { amount: 11000, label: 'Fodder for all cows for a day', labelGuj: 'બધી ગાયો નો એક દિવસ ઘાસચારો' },
     ],
   },
   {
@@ -139,6 +139,7 @@ const DonatePage = () => {
     name: '',
     email: '',
     phone: '',
+    pan: '',
     anonymous: false,
   });
   const [isProcessing, setIsProcessing] = useState(false);
@@ -275,7 +276,7 @@ const DonatePage = () => {
             toast.success('દાન સફળ! ધન્યવાદ! / Thank you for your donation!', { duration: 5000 });
             setTimeout(() => {
               setShowSuccess(false);
-              setFormData({ name: '', email: '', phone: '', anonymous: false });
+              setFormData({ name: '', email: '', phone: '', pan: '', anonymous: false });
               setSelectedAmount(null);
               setCustomAmount('');
             }, 5000);
@@ -300,13 +301,22 @@ const DonatePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-cream-50 relative">
+      {/* Background cow image with very low opacity */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <img
+          src="/images/IMG-20260920-WA0032.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.07]"
+          aria-hidden="true"
+        />
+      </div>
       <Helmet>
         <title>Donate for Gau Seva - Shree Nagnath Gauseva Trust | Online Donation for Cow Care</title>
-        <meta name="description" content="Donate online to Shree Nagnath Gauseva Trust. Help feed, shelter and provide medical care to 500+ cows. 80G tax benefit available. Secure payment via UPI, cards, net banking. ગૌ સેવા માટે દાન કરો." />
+        <meta name="description" content="Donate online to Shree Nagnath Gauseva Trust. Help feed, shelter and provide medical care to 300+ cows. 80G tax benefit available. Secure payment via UPI, cards, net banking. ગૌ સેવા માટે દાન કરો." />
         <link rel="canonical" href="https://shreenagnathgauseva.org/donate" />
         <meta property="og:title" content="Donate for Gau Seva - Shree Nagnath Gauseva Trust" />
-        <meta property="og:description" content="Donate online to help 500+ cows. 80G tax benefit. Secure payment via UPI, cards, net banking." />
+        <meta property="og:description" content="Donate online to help 300+ cows. 80G tax benefit. Secure payment via UPI, cards, net banking." />
         <meta property="og:url" content="https://shreenagnathgauseva.org/donate" />
       </Helmet>
       <Toaster
@@ -361,9 +371,9 @@ const DonatePage = () => {
       {/* Compact Header */}
       <header className="bg-white/95 backdrop-blur-xl shadow-sm border-b border-gold-200/50 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14 md:h-16">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 md:w-11 md:h-11 flex-shrink-0">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <div className="w-14 h-14 md:w-[4.5rem] md:h-[4.5rem] -my-2 flex-shrink-0">
                 <img
                   src="/images/logo (2).png"
                   alt="Shree Nagnath Gauseva Trust Logo"
@@ -401,8 +411,17 @@ const DonatePage = () => {
       </header>
 
       {/* Compact Title Strip */}
-      <div className="bg-gradient-to-r from-saffron-500 via-gold-500 to-saffron-500 py-4 sm:py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 py-5 sm:py-7 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/IMG-20260920-WA0040.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-saffron-600/90 via-gold-500/85 to-saffron-600/90" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
             <FaHeart className="inline w-5 h-5 mr-2 -mt-1" />
             Donate for Gau Seva
@@ -411,7 +430,7 @@ const DonatePage = () => {
             {"ગૌ સેવા માટે દાન કરો - તમારું દાન જીવન બચાવે છે"}
           </p>
           <p className="font-gujarati text-xs sm:text-sm text-white/90 italic mb-2">
-            {"\"ફૂલ ના થાય તો ફૂલ ની પાંખડી, તમારી શ્રદ્ધા જ સૌથી મોટું દાન છે\""}
+            {"\"ફૂલ નહીં તો ફૂલ ની પાંખડી, તમારી શ્રદ્ધા જ સૌથી મોટું દાન છે\""}
           </p>
           <div className="max-w-xl mx-auto bg-white/15 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
             <p className="font-gujarati text-[11px] sm:text-xs text-white/90 leading-relaxed">
@@ -426,7 +445,7 @@ const DonatePage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-8">
 
         {/* Online / Bank Transfer Toggle */}
         <div className="flex justify-center mb-5 sm:mb-6">
@@ -637,6 +656,20 @@ const DonatePage = () => {
                         placeholder="Email (optional) / ઈમેલ"
                         className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-saffron-500 focus:ring-4 focus:ring-saffron-500/20 outline-none font-body transition-all"
                       />
+                      <input
+                        type="text"
+                        value={formData.pan}
+                        onChange={(e) => handleFormChange('pan', e.target.value.toUpperCase().slice(0, 10))}
+                        placeholder="PAN Number (optional) / PAN નંબર"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-saffron-500 focus:ring-4 focus:ring-saffron-500/20 outline-none font-body transition-all mt-3"
+                      />
+                      <p className="font-body text-[11px] text-gray-400 mt-1 leading-snug">
+                        <FaCertificate className="inline w-3 h-3 text-gold-500 mr-1 -mt-0.5" />
+                        PAN not provided? You won't be able to claim 50% tax exemption u/s 80G.
+                      </p>
+                      <p className="font-gujarati text-[11px] text-gray-400 leading-snug">
+                        {"PAN નંબર વિના 80G હેઠળ 50% ટેક્સ છૂટ નો લાભ મળશે નહીં."}
+                      </p>
                     </div>
 
                     <label className="flex items-center gap-2 mt-3 cursor-pointer">
@@ -963,7 +996,7 @@ const DonatePage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-charcoal-950 text-white py-5 mt-8">
+      <footer className="relative z-10 bg-charcoal-950 text-white py-5 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-3">

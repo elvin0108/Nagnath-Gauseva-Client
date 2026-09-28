@@ -25,8 +25,8 @@ const RAZORPAY_KEY = import.meta.env?.VITE_RAZORPAY_KEY_ID || 'rzp_test_XXXXXXXX
 const IS_TEST_MODE = !import.meta.env?.VITE_RAZORPAY_KEY_ID || RAZORPAY_KEY.startsWith('rzp_test_');
 
 const presetAmounts = [
-  { amount: 251, impact: "One day's food", icon: GiMeal },
-  { amount: 501, impact: 'Feed a cow for 2 days', icon: GiMeal },
+  { amount: 251, impact: "One day's fodder", icon: GiMeal },
+  { amount: 501, impact: 'Fodder for a cow for 2 days', icon: GiMeal },
   { amount: 1100, impact: 'Medical treatment', icon: GiMedicines },
   { amount: 2100, impact: 'Weekly medicine supply', icon: GiMedicines },
   { amount: 5100, impact: 'Monthly cow care', icon: GiCow },

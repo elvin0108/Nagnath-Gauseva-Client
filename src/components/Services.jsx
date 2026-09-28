@@ -30,10 +30,10 @@ const Services = () => {
     {
       key: 'feeding',
       icon: <FaUtensils className="text-3xl" />,
-      title: 'Daily Feeding',
-      titleGuj: 'દૈનિક ભોજન',
+      title: 'Daily Fodder',
+      titleGuj: 'દૈનિક ઘાસચારો',
       description:
-        'Nutritious daily meals including fresh green fodder, dry grass, grains and clean water for every cow. No cow goes hungry at our gaushala.',
+        'Nutritious daily fodder including fresh green grass, dry hay, grains and clean water for every cow. No cow goes hungry at our gaushala.',
       photo: '/images/IMG-20260920-WA0075.jpg',
       gradient: 'from-gold-700/80 via-gold-800/70 to-forest-900/80',
     },
@@ -53,7 +53,7 @@ const Services = () => {
       title: 'Gaushala Maintenance',
       titleGuj: 'ગૌશાળા જાળવણી',
       description:
-        'Maintaining our modern gaushala with the best facilities for 500+ cows. Our dedicated workers ensure clean, safe and comfortable living conditions every day.',
+        'Maintaining our modern gaushala with the best facilities for 300+ cows. Our dedicated workers ensure clean, safe and comfortable living conditions every day.',
       photo: '/images/IMG-20260920-WA0044.jpg',
       gradient: 'from-charcoal-800/80 via-charcoal-900/70 to-saffron-900/80',
     },

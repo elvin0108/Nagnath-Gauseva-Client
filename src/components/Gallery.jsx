@@ -16,7 +16,7 @@ const categories = [
 const galleryItems = [
   // Cows
   { id: 1, category: 'cows', src: '/images/IMG-20260920-WA0032.jpg', caption: 'Cows grazing in open field' },
-  { id: 2, category: 'cows', src: '/images/IMG-20260920-WA0040.jpg', caption: 'Our gaushala - home to 500+ cows' },
+  { id: 2, category: 'cows', src: '/images/IMG-20260920-WA0040.jpg', caption: 'Our gaushala - home to 300+ cows' },
   { id: 3, category: 'cows', src: '/images/IMG-20260920-WA0031.jpg', caption: 'Our beloved calves' },
   { id: 4, category: 'cows', src: '/images/IMG-20260920-WA0033.jpg', caption: 'Every calf is precious' },
   { id: 5, category: 'cows', src: '/images/IMG-20260920-WA0036.jpg', caption: 'Calves at the shelter' },

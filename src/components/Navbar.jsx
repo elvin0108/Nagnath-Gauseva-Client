@@ -83,7 +83,7 @@ const Navbar = () => {
               className="flex items-center gap-2 sm:gap-3 flex-shrink-0 group min-w-0"
             >
               {/* Logo Image */}
-              <div className="relative w-10 h-10 md:w-16 md:h-16 flex-shrink-0">
+              <div className="relative w-14 h-14 md:w-[4.5rem] md:h-[4.5rem] -my-2 flex-shrink-0">
                 <img
                   src="/images/logo (2).png"
                   alt="Shree Nagnath Gauseva Trust Logo"

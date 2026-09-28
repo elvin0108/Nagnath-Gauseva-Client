@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { FaHeart, FaArrowDown } from 'react-icons/fa';
 
 const stats = [
-  { value: '500+', label: 'Cows Sheltered' },
+  { value: '300+', label: 'Cows Sheltered' },
   { value: '1000+', label: 'Treatments' },
-  { value: '\u221E', label: 'Serving Since Years' },
+  { value: '4+', label: 'Years of Seva' },
 ];
 
 const Hero = () => {

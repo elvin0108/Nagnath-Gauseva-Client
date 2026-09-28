@@ -109,8 +109,8 @@ const Campaign = () => {
             <div className="mt-5 mx-auto w-28 h-1 rounded-full bg-gradient-to-r from-saffron-400 via-gold-400 to-saffron-400" />
 
             <p className="mt-6 font-body text-lg md:text-xl text-gold-100/60 max-w-3xl mx-auto leading-relaxed">
-              Our gaushala is home to 500+ cows who need daily feeding, medical care and love.
-              Your donation directly provides food, medicine and shelter to these gentle beings.{' '}
+              Our gaushala is home to 300+ cows who need daily fodder, medical care and love.
+              Your donation directly provides fodder, medicine and shelter to these gentle beings.{' '}
               <span className="text-gold-300 font-semibold">Every rupee counts.</span>{' '}
               Help us continue this sacred mission of Gau Seva.
             </p>
@@ -133,7 +133,7 @@ const Campaign = () => {
             <div className="bg-white/5 backdrop-blur-md border border-gold-500/20 rounded-xl p-4 md:p-6 text-center hover:bg-white/8 transition-colors duration-300">
               <GiCow className="text-gold-400 text-3xl mx-auto mb-3" />
               <p className="font-heading font-bold text-2xl md:text-3xl text-white">
-                {"500+"}
+                {"300+"}
               </p>
               <p className="font-body text-gold-200/60 text-sm mt-1">
                 Cows Under Our Care

@@ -139,7 +139,7 @@ const About = () => {
               </div>
               <div>
                 <p className="font-heading font-bold text-forest-800 text-2xl leading-tight">
-                  10+
+                  4+
                 </p>
                 <p className="font-body text-forest-600 text-xs">
                   Years of Seva
@@ -179,8 +179,8 @@ const About = () => {
               </h3>
               <p className="font-body text-forest-700 leading-relaxed pl-0 sm:pl-[52px]">
                 To rescue abandoned, injured and sick cows from the streets and
-                provide them with safe shelter, nutritious food and proper medical
-                care. Our modern gaushala houses 500+ cows with the best
+                provide them with safe shelter, nutritious fodder and proper medical
+                care. Our modern gaushala houses 300+ cows with the best
                 facilities. Every cow that comes to us receives love, treatment
                 and a permanent home.
               </p>
